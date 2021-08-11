@@ -1,4 +1,5 @@
 class HerosController < ApplicationController
+  http_basic_authenticate_with name: 'admin', password: 'admin', except: %i[index show]
   before_action :set_hero, only: %i[ show edit update destroy ]
 
   # GET /heros or /heros.json
